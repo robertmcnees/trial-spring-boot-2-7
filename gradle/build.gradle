@@ -1,6 +1,6 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '2.7.18'
+	id 'org.springframework.boot' version '2.7.18-spring-boot-2.7.20-trial'
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 }
 
@@ -14,6 +14,12 @@ java {
 }
 
 repositories {
+	maven {
+		url = uri(providers.gradleProperty("herodevs_nes_registry_url").get())
+		credentials {
+			username = providers.gradleProperty("herodevs_nes_registry_user").get()
+		}
+	}
 	mavenCentral()
 }
 
