@@ -111,11 +111,14 @@ pluginManagement {
 
 - Add the HeroDevs repository to the `repositories` block:
 ```groovy
-maven {
-    url = uri(providers.gradleProperty("herodevs_nes_registry_url").get())
-    credentials {
-        username = providers.gradleProperty("herodevs_nes_registry_user").get()
+repositories {
+    maven {
+        url = uri(providers.gradleProperty("herodevs_nes_registry_url").get())
+        credentials {
+            username = providers.gradleProperty("herodevs_nes_registry_user").get()
+        }
     }
+    mavenCentral()
 }
 ```
 - Update the Spring Boot dependency to use the HeroDevs NES for Spring Boot trial version:
