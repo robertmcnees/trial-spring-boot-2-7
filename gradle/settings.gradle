@@ -1,13 +1,1 @@
-pluginManagement {
-    repositories {
-        maven {
-            url = uri(providers.gradleProperty("herodevs_nes_registry_url").get())
-            credentials {
-                username = providers.gradleProperty("herodevs_nes_registry_user").get()
-            }
-        }
-        mavenCentral()
-    }
-}
-
 rootProject.name = 'boot-2-trial'
