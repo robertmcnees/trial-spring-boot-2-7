@@ -8,6 +8,7 @@
 .springBeans
 target/
 build/
+.gradle/
 bin/
 _site/
 .idea
