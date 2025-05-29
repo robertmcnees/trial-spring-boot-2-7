@@ -2,8 +2,8 @@ package com.herodevs.nes.trial.spring.controller;
 
 import com.herodevs.nes.trial.spring.model.Pet;
 import com.herodevs.nes.trial.spring.repository.PetRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -11,8 +11,11 @@ import java.util.List;
 @RestController
 public class PetController {
 
-    @Autowired
-    private PetRepository petRepository;
+    private final PetRepository petRepository;
+
+    private PetController(PetRepository petRepository) {
+        this.petRepository = petRepository;
+    }
 
     @GetMapping("/helloPets")
     public String helloPets() {
@@ -24,13 +27,13 @@ public class PetController {
         return petRepository.findAll();
     }
 
-    @GetMapping("/petsByName")
-    public List<Pet> getByName(String name) {
+    @GetMapping(value = "/pets", params = "name")
+    public List<Pet> getByName(@RequestParam("name") String name) {
         return petRepository.findByName(name);
     }
 
-    @GetMapping("/petsByType")
-    public List<Pet> getByType(String type) {
+    @GetMapping(value = "/pets", params = "type")
+    public List<Pet> getByType(@RequestParam("type") String type) {
         return petRepository.findByType(type);
     }
 

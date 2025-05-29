@@ -161,15 +161,15 @@ When the application is running, verify that the unsecured endpoint is reachable
 curl http://localhost:8080/helloPets
 ```
 You should see the following output:
-```json
+```
 Woof! Meow! Blub! Tweet!
 ```
 
 To access the other REST endpoints, you need to authenticate. The application uses Spring Security to secure the endpoints. You can use the following command to pass the simple authentication:
 ```bash
-curl -u user:password "http://localhost:8080/petsByName?name=Buddy"
+curl -u user:password "http://localhost:8080/pets?name=Buddy"
 ```
 You should see the following output:
-```json
+```
 [{"name":"Buddy","type":"Dog"}]
 ```
