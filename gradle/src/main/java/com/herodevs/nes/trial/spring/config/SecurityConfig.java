@@ -16,8 +16,10 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .antMatchers("/helloPets").permitAll()
-                        .anyRequest().authenticated()
+                        .mvcMatchers("/helloPets").permitAll() // publicly available route
+                        .mvcMatchers("/allPets").hasRole("USER") // only USER roles can access
+                        .mvcMatchers("/pets").hasRole("USER") // only USER roles can access
+                        .anyRequest().denyAll() // Prefer to deny all by default
                 )
                 .httpBasic(); // or .formLogin() depending on preference
 
