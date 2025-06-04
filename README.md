@@ -2,7 +2,9 @@
 
 Welcome to the trial version of NES for Spring Boot 2.7! This is a simple example of how to use NES with Spring Boot 2.7.
 
-**⚠️ Important:** This is a trial version and is not intended for production use. Trial versions have zero CVE fixes included. The purpose of trial versions is to verify integration with HeroDevs repositories. To obtain fully secure, drop in replacements please contact sales.
+**⚠️ Important:** This is a trial version and is not intended for production use. Trial versions have zero CVE fixes included. The purpose of trial versions is to verify integration with HeroDevs repositories. To obtain fully secure, drop in replacements please [contact sales](https://www.herodevs.com/contact).
+
+**🟡 Caution:** This repository demonstrates a quick and simple way to integrate with the HeroDevs NES repository. Usernames and password values are hard coded in Maven and Gradle settings files. When moving to production, take care of your username and password values in a more secure way.
 
 # Pet Clinic Lite
 
